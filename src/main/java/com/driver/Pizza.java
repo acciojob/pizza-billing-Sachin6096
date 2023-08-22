@@ -6,6 +6,8 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
+    private int totalprice;
+
     private boolean toppings;
     private boolean ExtraCheese;
 
@@ -16,21 +18,22 @@ public class Pizza {
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
-        Bill = false;
-        toppings = false;
-        ExtraCheese= false;
-        takeAway = false;
-
         if(isVeg)
         {
             this.price = 300;
         }
         else this.price = 400;
+
+        totalprice = price;
+        Bill = false;
+        toppings = false;
+        ExtraCheese= false;
+        takeAway = false;
         this.bill = "";
     }
 
     public int getPrice(){
-        return this.price;
+        return this.totalprice;
     }
 
     public void addExtraCheese(){
@@ -38,7 +41,7 @@ public class Pizza {
         if(!ExtraCheese && !Bill)
         {
             ExtraCheese = true;
-            this.price += 80;
+            totalprice += 80;
         }
     }
 
@@ -48,9 +51,9 @@ public class Pizza {
         {
             if(isVeg)
             {
-                this.price += 70;
+                totalprice += 70;
             }
-            else this.price += 120;
+            else totalprice += 120;
             toppings = true;
         }
     }
@@ -60,7 +63,7 @@ public class Pizza {
         if(!takeAway && !Bill)
         {
             takeAway = true;
-            this.price += 20;
+           totalprice += 20;
         }
     }
 
@@ -98,7 +101,7 @@ public class Pizza {
             }
 
             Bill = true;
-            this.bill += "Total Price:"+this.price;
+            this.bill += "Total Price:"+totalprice;
             this.bill += "\n";
 
         }
