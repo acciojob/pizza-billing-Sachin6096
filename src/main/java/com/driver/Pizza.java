@@ -72,10 +72,10 @@ public class Pizza {
             if(isVeg)
             {
 
-                this.bill += "Base price of The Pizza: 300 \n";
+                this.bill += "Base Price Of The Pizza: 300 \n";
 
             }
-            else this.bill += "Base price of The Pizza: 400 \n";
+            else this.bill += "Base Price Of The Pizza: 400 \n";
 
 
             if(ExtraCheese)
@@ -99,6 +99,7 @@ public class Pizza {
 
             Bill = true;
             this.bill += "Total Price:"+this.price;
+            this.bill += "\n";
 
         }
         return this.bill;
