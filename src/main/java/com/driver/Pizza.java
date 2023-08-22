@@ -38,7 +38,7 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        if(!ExtraCheese && !Bill)
+        if(!ExtraCheese)
         {
             ExtraCheese = true;
             totalprice += 80;
@@ -47,7 +47,7 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        if(!toppings && !Bill)
+        if(!toppings)
         {
             if(isVeg)
             {
@@ -60,7 +60,7 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here  add
-        if(!takeAway && !Bill)
+        if(!takeAway)
         {
             takeAway = true;
            totalprice += 20;
@@ -72,37 +72,31 @@ public class Pizza {
 
         if(!Bill)
         {
-            if(isVeg)
-            {
-
-                this.bill += "Base Price Of The Pizza: 300 \n";
-
-            }
-            else this.bill += "Base Price Of The Pizza: 400 \n";
-
+            bill += "Base Price Of The Pizza: "+price+ "\n";
 
             if(ExtraCheese)
             {
-                this.bill += "Extra Cheese Added: 80 \n";
+                bill += "Extra Cheese Added: 80 \n";
             }
 
             if(toppings)
             {
                 if(isVeg)
                 {
-                    this.bill += "Extra Toppings Added: 70 \n";
+                    bill += "Extra Toppings Added: 70 \n";
                 }
-                else this.bill += "Extra Toppings Added: 120";
+                else bill += "Extra Toppings Added: 120 \n";
             }
 
             if(takeAway)
             {
-                this.bill += "Paperbag Added: 20 \n";
+                bill += "Paperbag Added: 20 \n";
             }
 
+
+            bill += "Total Price:"+totalprice + "\n";
             Bill = true;
-            this.bill += "Total Price:"+totalprice;
-            this.bill += "\n";
+
 
         }
         return this.bill;
