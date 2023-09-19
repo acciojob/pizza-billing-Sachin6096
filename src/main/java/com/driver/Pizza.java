@@ -72,8 +72,7 @@ public class Pizza {
     public String getBill(){
         // your code goes here
 
-        if(!Bill)
-        {
+
             bill += "Base Price Of The Pizza: "+ price+ "\n";
 
             if(ExtraCheese)
@@ -100,7 +99,7 @@ public class Pizza {
             Bill = true;
 
 
-        }
+
         return this.bill;
     }
 }
