@@ -33,7 +33,7 @@ public class Pizza {
     }
 
     public int getPrice(){
-        return this.price;
+        return this.totalprice;
     }
 
     public void addExtraCheese(){
@@ -53,7 +53,9 @@ public class Pizza {
             {
                 totalprice += 70;
             }
-            else totalprice += 120;
+            else {
+                totalprice += 120;
+            }
             toppings = true;
         }
     }
@@ -72,29 +74,29 @@ public class Pizza {
 
         if(!Bill)
         {
-            bill += "Base Price Of The Pizza: "+price+ "\n";
+            bill += "Base Price Of The Pizza: "+ price+ "\n";
 
             if(ExtraCheese)
             {
-                bill += "Extra Cheese Added: 80 \n";
+                bill += "Extra Cheese Added: "+80+ " \n";
             }
 
             if(toppings)
             {
                 if(isVeg)
                 {
-                    bill += "Extra Toppings Added: 70 \n";
+                    bill += "Extra Toppings Added: "+70+ "\n";
                 }
-                else bill += "Extra Toppings Added: 120 \n";
+                else bill += "Extra Toppings Added: "+120+"\n";
             }
 
             if(takeAway)
             {
-                bill += "Paperbag Added: 20 \n";
+                bill += "Paperbag Added: " +20+ "\n";
             }
 
 
-            bill += "Total Price:"+totalprice + "\n";
+            bill += "Total Price: "+totalprice + "\n";
             Bill = true;
 
 
